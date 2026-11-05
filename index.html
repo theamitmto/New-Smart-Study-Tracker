@@ -591,69 +591,6 @@
         </div>
       </div>
 
-      <!-- NEW: DAILY 5-MINUTE APP OPEN & STUDY TIME REWARDS HUB -->
-      <div class="st-glass p-4 rounded-2xl border border-amber-500/25 space-y-3 bg-gradient-to-br from-amber-500/5 via-transparent to-sky-500/5">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="text-xl">🎁</span>
-            <div>
-              <h3 class="text-xs font-black uppercase tracking-wider text-[var(--st-text-head)]">Daily Rewards & Points</h3>
-              <p class="text-[10px] text-[var(--st-text-muted)]">Earn points by active app time (5m) & study hours</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-1 font-mono font-black text-xs text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-xl border border-amber-500/20">
-            <span>💎</span> <span id="totalRewardPointsDisplay">0</span> <span class="text-[9px] text-[var(--st-text-muted)]">PTS</span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-2 text-xs">
-          <!-- Reward 1: 5-Minute App Open Session -->
-          <div class="p-3 rounded-xl st-subtle border border-[var(--st-border)] flex flex-col justify-between space-y-2">
-            <div>
-              <div class="flex items-center justify-between text-[10px]">
-                <span class="font-extrabold uppercase text-[var(--st-text-head)] flex items-center gap-1">📱 App 5m Open</span>
-                <span class="text-amber-500 font-bold font-mono">+50 pts</span>
-              </div>
-              <p class="text-[9px] text-[var(--st-text-muted)] mt-0.5">Stay active in app for 5 minutes</p>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-[9px] font-mono mb-1">
-                <span class="text-[var(--st-text-muted)]">Active time:</span>
-                <span id="appActiveTimeLabel" class="font-bold text-sky-500">0m 00s / 5m</span>
-              </div>
-              <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                <div id="appActiveProgressBar" class="h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-full transition-all duration-300" style="width: 0%"></div>
-              </div>
-            </div>
-
-            <button type="button" onclick="claimDailyAppOpenReward()" id="btnClaimAppOpenReward" class="w-full py-1.5 rounded-lg text-[10px] font-black transition-all bg-slate-200/60 dark:bg-slate-800 text-[var(--st-text-muted)] cursor-not-allowed">
-              🔒 5m Needed to Claim
-            </button>
-          </div>
-
-          <!-- Reward 2: Daily Study Hours Multiplier -->
-          <div class="p-3 rounded-xl st-subtle border border-[var(--st-border)] flex flex-col justify-between space-y-2">
-            <div>
-              <div class="flex items-center justify-between text-[10px]">
-                <span class="font-extrabold uppercase text-[var(--st-text-head)] flex items-center gap-1">⏱️ Study Bonus</span>
-                <span class="text-emerald-500 font-bold font-mono">+25 pts/hr</span>
-              </div>
-              <p class="text-[9px] text-[var(--st-text-muted)] mt-0.5">Points for every study hour logged</p>
-            </div>
-
-            <div class="bg-black/5 dark:bg-white/5 p-2 rounded-lg text-center font-mono">
-              <span class="text-[9px] text-[var(--st-text-muted)] block uppercase">Earned Study Points Today</span>
-              <span id="lblTodayStudyPoints" class="text-base font-black text-emerald-500">+0 PTS</span>
-            </div>
-
-            <button type="button" onclick="claimDailyStudyPoints()" id="btnClaimStudyReward" class="w-full py-1.5 rounded-lg text-[10px] font-black transition-all bg-emerald-600 text-white shadow-sm hover:brightness-110 active:scale-95">
-              Claim Study Points ✨
-            </button>
-          </div>
-        </div>
-      </div>
-
       <!-- Strengths & Attention Areas Cards -->
       <div class="grid grid-cols-2 gap-2.5 text-xs">
         <div class="p-3 rounded-2xl st-glass border border-emerald-500/20 space-y-1">
