@@ -245,9 +245,9 @@
   <!-- ROOT MOBILE CONTAINER -->
   <div id="super-tracker-root" class="w-full min-h-screen transition-colors duration-200">
     
-    <!-- TOP APP BAR & SUB-HEADER MENU (NATURAL SCROLL - MOVES UP/DOWN WITH PAGE) -->
-    <header class="w-full bg-[var(--st-card)] backdrop-blur-2xl border-b border-[var(--st-border)] px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-2 shadow-sm transition-all">
-      <div class="max-w-md mx-auto space-y-2.5">
+    <!-- TOP APP BAR (HEADER ROW ONLY) -->
+    <header class="w-full bg-[var(--st-card)] backdrop-blur-2xl border-b border-[var(--st-border)] px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-3 shadow-sm transition-all">
+      <div class="max-w-md mx-auto">
         
         <!-- Primary Row: Profile Badge & Quick Action Hub -->
         <div class="flex items-center justify-between gap-3">
@@ -290,48 +290,50 @@
 
         </div>
 
-        <!-- TOP NAVIGATION BAR (MOVED DIRECTLY BELOW HEADER) -->
-        <nav class="pt-1 border-t border-[var(--st-border)]">
-          <div class="flex items-center justify-between overflow-x-auto no-scrollbar gap-1 p-1 rounded-2xl st-subtle border border-[var(--st-border)]">
-            <button type="button" onclick="switchTab('matrix')" id="navBtn_matrix" class="flex-1 py-1.5 px-2 rounded-xl text-white bg-gradient-to-r from-sky-500 to-blue-600 font-extrabold text-[11px] flex flex-col sm:flex-row items-center justify-center gap-1 shadow-sm transition-all active:scale-95 flex-shrink-0">
-              <span class="text-sm leading-none">📋</span>
-              <span class="text-[9.5px] font-extrabold tracking-tight">Matrix</span>
-            </button>
-
-            <button type="button" onclick="switchTab('spacedhub')" id="navBtn_spacedhub" class="flex-1 py-1.5 px-2 rounded-xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
-              <span class="text-sm leading-none">🔁</span>
-              <span class="text-[9.5px] font-bold tracking-tight">Revision</span>
-            </button>
-
-            <button type="button" onclick="switchTab('focus')" id="navBtn_focus" class="flex-1 py-1.5 px-2 rounded-xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
-              <span class="text-sm leading-none">⏱️</span>
-              <span class="text-[9.5px] font-bold tracking-tight">Focus</span>
-            </button>
-
-            <button type="button" onclick="switchTab('mocks')" id="navBtn_mocks" class="flex-1 py-1.5 px-2 rounded-xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
-              <span class="text-sm leading-none">📝</span>
-              <span class="text-[9.5px] font-bold tracking-tight">Mocks</span>
-            </button>
-
-            <button type="button" onclick="switchTab('feynman')" id="navBtn_feynman" class="flex-1 py-1.5 px-2 rounded-xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
-              <span class="text-sm leading-none">💡</span>
-              <span class="text-[9.5px] font-bold tracking-tight">Recall</span>
-            </button>
-
-            <button type="button" onclick="switchTab('warroom')" id="navBtn_warroom" class="flex-1 py-1.5 px-2 rounded-xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
-              <span class="text-sm leading-none">⚔️</span>
-              <span class="text-[9.5px] font-bold tracking-tight">War Room</span>
-            </button>
-
-            <button type="button" onclick="switchTab('analytics')" id="navBtn_analytics" class="flex-1 py-1.5 px-2 rounded-xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
-              <span class="text-sm leading-none">📈</span>
-              <span class="text-[9.5px] font-bold tracking-tight">Charts</span>
-            </button>
-          </div>
-        </nav>
-
       </div>
     </header>
+
+    <!-- FLOATING NAVIGATION DOCK PLACED OUTSIDE & DIRECTLY BELOW HEADER -->
+    <div class="w-full px-3.5 pt-3 max-w-md mx-auto">
+      <nav class="p-1 rounded-3xl st-glass border border-[var(--st-border)] shadow-md">
+        <div class="flex items-center justify-between overflow-x-auto no-scrollbar gap-1">
+          <button type="button" onclick="switchTab('matrix')" id="navBtn_matrix" class="flex-1 py-2 px-2 rounded-2xl text-white bg-gradient-to-r from-sky-500 to-blue-600 font-extrabold text-[11px] flex flex-col sm:flex-row items-center justify-center gap-1 shadow-md shadow-sky-500/25 transition-all active:scale-95 flex-shrink-0">
+            <span class="text-sm leading-none">📋</span>
+            <span class="text-[9.5px] font-extrabold tracking-tight">Matrix</span>
+          </button>
+
+          <button type="button" onclick="switchTab('spacedhub')" id="navBtn_spacedhub" class="flex-1 py-2 px-2 rounded-2xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
+            <span class="text-sm leading-none">🔁</span>
+            <span class="text-[9.5px] font-bold tracking-tight">Revision</span>
+          </button>
+
+          <button type="button" onclick="switchTab('focus')" id="navBtn_focus" class="flex-1 py-2 px-2 rounded-2xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
+            <span class="text-sm leading-none">⏱️</span>
+            <span class="text-[9.5px] font-bold tracking-tight">Focus</span>
+          </button>
+
+          <button type="button" onclick="switchTab('mocks')" id="navBtn_mocks" class="flex-1 py-2 px-2 rounded-2xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
+            <span class="text-sm leading-none">📝</span>
+            <span class="text-[9.5px] font-bold tracking-tight">Mocks</span>
+          </button>
+
+          <button type="button" onclick="switchTab('feynman')" id="navBtn_feynman" class="flex-1 py-2 px-2 rounded-2xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
+            <span class="text-sm leading-none">💡</span>
+            <span class="text-[9.5px] font-bold tracking-tight">Recall</span>
+          </button>
+
+          <button type="button" onclick="switchTab('warroom')" id="navBtn_warroom" class="flex-1 py-2 px-2 rounded-2xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
+            <span class="text-sm leading-none">⚔️</span>
+            <span class="text-[9.5px] font-bold tracking-tight">War Room</span>
+          </button>
+
+          <button type="button" onclick="switchTab('analytics')" id="navBtn_analytics" class="flex-1 py-2 px-2 rounded-2xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0">
+            <span class="text-sm leading-none">📈</span>
+            <span class="text-[9.5px] font-bold tracking-tight">Charts</span>
+          </button>
+        </div>
+      </nav>
+    </div>
 
   <!-- MAIN SCROLLABLE MOBILE CONTENT CONTAINER -->
   <main class="app-scroll-body p-3.5 space-y-4 max-w-md mx-auto w-full">
@@ -1901,6 +1903,110 @@
           </div>
         </div>
 
+        <!-- NEW: INTERACTIVE DAY FILTER & COMPARATIVE INTELLIGENCE DOCK -->
+        <div class="relative overflow-hidden st-glass p-4 rounded-3xl space-y-3.5 border border-sky-500/25 shadow-xl bg-gradient-to-br from-white/95 via-sky-50/20 to-indigo-50/15 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-sky-950/20">
+          
+          <!-- Filter Header & Mode Selector -->
+          <div class="flex items-center justify-between gap-2 pb-2 border-b border-[var(--st-border)]">
+            <div class="flex items-center gap-2">
+              <span class="text-base">📅</span>
+              <div>
+                <h3 class="text-xs font-black uppercase tracking-wider text-[var(--st-text-head)]">Interactive Day Filter & Compare</h3>
+                <p class="text-[10px] text-[var(--st-text-muted)] font-medium">Filter charts by day range or compare any two specific days</p>
+              </div>
+            </div>
+            <span class="text-[9px] font-mono font-black text-sky-500 bg-sky-500/10 px-2 py-0.5 rounded-md border border-sky-500/20 flex-shrink-0">
+              DYNAMIC
+            </span>
+          </div>
+
+          <!-- Quick Range Filter Pills -->
+          <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 text-xs font-bold" id="analyticsRangePillsContainer">
+            <button type="button" onclick="setChartDayRangeFilter('all')" id="btnFilterRange_all" class="px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 text-white flex-shrink-0 text-[11px] font-extrabold shadow-md shadow-sky-500/25 border border-sky-400/30 active:scale-95 transition-all">
+              🌐 All Days
+            </button>
+            <button type="button" onclick="setChartDayRangeFilter('7d')" id="btnFilterRange_7d" class="px-3.5 py-1.5 rounded-2xl st-glass text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] flex-shrink-0 text-[11px] font-bold border border-[var(--st-border)] active:scale-95 transition-all">
+              ⚡ Last 7 Days
+            </button>
+            <button type="button" onclick="setChartDayRangeFilter('14d')" id="btnFilterRange_14d" class="px-3.5 py-1.5 rounded-2xl st-glass text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] flex-shrink-0 text-[11px] font-bold border border-[var(--st-border)] active:scale-95 transition-all">
+              📊 Last 14 Days
+            </button>
+            <button type="button" onclick="toggleCustomRangeControls()" id="btnFilterRange_custom" class="px-3.5 py-1.5 rounded-2xl st-glass text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] flex-shrink-0 text-[11px] font-bold border border-[var(--st-border)] active:scale-95 transition-all">
+              ⚙️ Custom Range
+            </button>
+          </div>
+
+          <!-- Custom Day Range Slider/Input (Hidden by default, toggled on demand) -->
+          <div id="wrapperCustomChartRange" class="hidden p-3 rounded-2xl st-subtle border border-sky-500/20 space-y-2 text-xs">
+            <div class="flex items-center justify-between text-[10px] font-mono font-bold text-[var(--st-text-muted)]">
+              <span>SELECT DAY INTERVAL:</span>
+              <span id="lblCustomRangeDisplay" class="text-sky-500">Day 1 to Day 30</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex-1 flex items-center gap-1.5">
+                <span class="text-[10px] font-mono text-[var(--st-text-muted)] font-bold">From:</span>
+                <input type="number" id="inputChartRangeStart" min="1" max="365" value="1" oninput="applyCustomChartRange()" class="w-full py-1.5 px-2 rounded-xl st-glass font-mono font-bold text-xs text-center text-sky-600 dark:text-sky-400 outline-none border border-[var(--st-border)]">
+              </div>
+              <span class="text-slate-400">➔</span>
+              <div class="flex-1 flex items-center gap-1.5">
+                <span class="text-[10px] font-mono text-[var(--st-text-muted)] font-bold">To:</span>
+                <input type="number" id="inputChartRangeEnd" min="1" max="365" value="30" oninput="applyCustomChartRange()" class="w-full py-1.5 px-2 rounded-xl st-glass font-mono font-bold text-xs text-center text-sky-600 dark:text-sky-400 outline-none border border-[var(--st-border)]">
+              </div>
+              <button type="button" onclick="applyCustomChartRange()" class="px-3 py-1.5 rounded-xl bg-sky-500 text-white font-bold text-[11px] active:scale-95 transition-all flex-shrink-0">
+                Apply
+              </button>
+            </div>
+          </div>
+
+          <!-- Dual Day Comparison HUD (Day A vs Day B) -->
+          <div class="p-3.5 rounded-2xl st-subtle border border-indigo-500/25 bg-gradient-to-r from-indigo-500/10 via-sky-500/5 to-transparent space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-black uppercase tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
+                <span>⚖️</span> <span>Day vs Day Comparative Analysis</span>
+              </span>
+              <span class="text-[9px] font-mono font-bold text-[var(--st-text-muted)]">A/B COMPARE</span>
+            </div>
+
+            <!-- Selectors for Day A and Day B -->
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="p-2.5 rounded-xl st-glass border border-[var(--st-border)] space-y-1">
+                <label class="block text-[9.5px] font-bold uppercase text-[var(--st-text-muted)] flex items-center justify-between">
+                  <span>Day A (Base)</span>
+                  <span class="text-sky-500 font-mono">D1</span>
+                </label>
+                <select id="selectCompareDayA" onchange="runDayComparisonAnalysis()" class="w-full bg-transparent text-xs font-mono font-bold text-[var(--st-text-head)] outline-none cursor-pointer"></select>
+              </div>
+
+              <div class="p-2.5 rounded-xl st-glass border border-[var(--st-border)] space-y-1">
+                <label class="block text-[9.5px] font-bold uppercase text-[var(--st-text-muted)] flex items-center justify-between">
+                  <span>Day B (Target)</span>
+                  <span class="text-indigo-500 font-mono">D2</span>
+                </label>
+                <select id="selectCompareDayB" onchange="runDayComparisonAnalysis()" class="w-full bg-transparent text-xs font-mono font-bold text-[var(--st-text-head)] outline-none cursor-pointer"></select>
+              </div>
+            </div>
+
+            <!-- Comparison Results Matrix -->
+            <div class="p-3 rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-[var(--st-border)] flex items-center justify-between text-xs font-mono">
+              <div class="text-left">
+                <span class="text-[9px] uppercase font-bold text-[var(--st-text-muted)] block" id="lblCompareDayATitle">Day A Output</span>
+                <span class="text-base font-black text-sky-600 dark:text-sky-400 block" id="lblCompareDayAVal">0.0h (0 Topics)</span>
+              </div>
+
+              <div class="text-center px-2">
+                <span class="text-xs font-black block" id="lblCompareDeltaBadge">0%</span>
+                <span class="text-[8.5px] text-[var(--st-text-muted)] block" id="lblCompareDeltaNote">No change</span>
+              </div>
+
+              <div class="text-right">
+                <span class="text-[9px] uppercase font-bold text-[var(--st-text-muted)] block" id="lblCompareDayBTitle">Day B Output</span>
+                <span class="text-base font-black text-indigo-500 block" id="lblCompareDayBVal">0.0h (0 Topics)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
         <!-- PRIME CARD 1: DAILY STUDY VELOCITY CURVE -->
         <div class="relative overflow-hidden st-glass p-4 sm:p-5 rounded-3xl space-y-4 border border-sky-500/25 shadow-2xl bg-gradient-to-br from-white/95 via-sky-50/25 to-indigo-50/15 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-sky-950/20">
           <div class="flex items-center justify-between pb-2 border-b border-[var(--st-border)]">
@@ -2195,19 +2301,6 @@
           </div>
         </div>
 
-        <!-- PRIME EXECUTIVE REPORT ACTION DOCK -->
-        <div class="flex items-center gap-2.5 pt-1">
-          <button onclick="copyDailyTelegramReport()" class="flex-1 py-3 px-3 rounded-2xl st-glass border border-sky-500/25 text-xs font-black text-sky-600 dark:text-sky-400 shadow-sm flex items-center justify-center gap-1.5 active:scale-95 hover:bg-sky-500/10 transition-all">
-            <span>📋</span> <span>Share Card</span>
-          </button>
-          <button onclick="generatePrintReport()" class="flex-1 py-3 px-3 rounded-2xl st-glass border border-indigo-500/25 text-xs font-black text-indigo-600 dark:text-indigo-400 shadow-sm flex items-center justify-center gap-1.5 active:scale-95 hover:bg-indigo-500/10 transition-all">
-            <span>🖨️</span> <span>PDF Report</span>
-          </button>
-          <button onclick="exportUserDataJSON()" class="w-12 h-12 rounded-2xl st-glass border border-[var(--st-border)] flex items-center justify-center text-sm active:scale-90 hover:border-sky-500/40 transition-all shadow-sm flex-shrink-0" title="Export JSON">
-            📥
-          </button>
-        </div>
-
         <div class="hidden">
           <span id="desktopTableTitle"></span>
           <span id="desktopTableSubtitle"></span>
@@ -2225,27 +2318,70 @@
         </div>
       </section>
 
-      <!-- Executive Footer with Only Social Logos -->
-      <footer class="text-center py-6 text-[10px] text-[var(--st-text-muted)] space-y-3 border-t border-[var(--st-border)] mt-4">
-        <!-- Social Media Logos Row (Instagram & X) -->
-        <div class="flex items-center justify-center gap-3">
-          <!-- Instagram Logo Button -->
-          <a href="https://instagram.com/theamitmto" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-2xl st-glass flex items-center justify-center text-pink-500 hover:text-pink-600 hover:scale-110 active:scale-90 transition-all shadow-sm border border-[var(--st-border)] group" title="Instagram">
-            <svg class="w-5 h-5 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
+      <!-- PRIME EXECUTIVE SIGNATURE FOOTER -->
+      <footer class="mt-6 mb-2">
+        <div class="relative overflow-hidden st-glass rounded-3xl p-5 border border-sky-500/20 shadow-xl space-y-4 text-center bg-gradient-to-br from-white/95 via-sky-50/20 to-indigo-50/15 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-sky-950/25">
+          
+          <!-- Ambient Radial Background Glow -->
+          <div class="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-gradient-to-tr from-sky-400/15 to-blue-600/20 blur-2xl pointer-events-none"></div>
+          <div class="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-gradient-to-tr from-indigo-500/10 to-emerald-500/15 blur-2xl pointer-events-none"></div>
 
-          <!-- X (formerly Twitter) Logo Button -->
-          <a href="https://x.com/theamitmto" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-2xl st-glass flex items-center justify-center text-[var(--st-text-head)] hover:text-sky-500 hover:scale-110 active:scale-90 transition-all shadow-sm border border-[var(--st-border)] group" title="X (Twitter)">
-            <svg class="w-4 h-4 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
+          <!-- Brand Logo & Live Engine Chip -->
+          <div class="flex flex-col items-center justify-center space-y-2 relative">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-sky-500 via-blue-600 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-md shadow-sky-500/25 ring-2 ring-sky-400/20">
+                🎯
+              </div>
+              <span class="font-display font-extrabold text-sm sm:text-base text-[var(--st-text-head)] tracking-tight">
+                Smart Study Pro
+              </span>
+            </div>
+
+            <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-mono text-[9px] font-bold">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>ALL-IN-ONE COMPETITIVE EXAM ASPIRANT OS</span>
+            </div>
+          </div>
+
+          <!-- Interactive Social Touchpoints (Instagram & X) -->
+          <div class="flex items-center justify-center gap-3 pt-1">
+            <!-- Instagram -->
+            <a href="https://instagram.com/theamitmto" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 px-3.5 py-2 rounded-2xl st-subtle border border-[var(--st-border)] hover:border-pink-500/40 hover:bg-gradient-to-r hover:from-pink-500/10 hover:to-rose-500/10 transition-all duration-300 shadow-sm active:scale-95" title="Follow on Instagram">
+              <div class="w-7 h-7 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-110">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-bold text-[var(--st-text-head)] group-hover:text-pink-500 transition-colors">Instagram</span>
+            </a>
+
+            <!-- X (Twitter) -->
+            <a href="https://x.com/theamitmto" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 px-3.5 py-2 rounded-2xl st-subtle border border-[var(--st-border)] hover:border-sky-500/40 hover:bg-gradient-to-r hover:from-sky-500/10 hover:to-blue-500/10 transition-all duration-300 shadow-sm active:scale-95" title="Follow on X">
+              <div class="w-7 h-7 rounded-xl bg-slate-900 dark:bg-slate-100 flex items-center justify-center text-white dark:text-slate-900 shadow-sm transition-transform group-hover:scale-110">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-bold text-[var(--st-text-head)] group-hover:text-sky-500 transition-colors">Twitter (X)</span>
+            </a>
+          </div>
+
+          <!-- Bottom Privacy & Security Protocol Badge with Browser Data Warning -->
+          <div class="pt-2 border-t border-[var(--st-border)] flex flex-col items-center justify-center gap-1.5 font-mono text-[9.5px] text-[var(--st-text-muted)] text-center leading-relaxed">
+            <div class="flex items-center justify-center gap-1.5 flex-wrap">
+              <span class="text-sky-500">🛡️</span>
+              <span class="font-bold text-[var(--st-text-head)]">100% Offline & Private • Zero Cloud Leakage • Persistent Storage</span>
+            </div>
+            <div class="inline-flex items-center gap-1 px-3 py-1 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 font-sans text-[10px] font-semibold">
+              <span>⚠️</span>
+              <span>Notice: Clearing your browser cache or site data will permanently erase your local study records.</span>
+            </div>
+          </div>
+
         </div>
-
-        <p id="footerCopy">Smart Study Pro • All-in-One Competitive Exam Aspirant OS</p>
-        <p id="footerSub">All data is auto-saved in your browser localStorage.</p>
       </footer>
 
     </main>
@@ -3272,6 +3408,13 @@
     let activeSubjectCategoryFilter = 'all';
     let subjectSearchQuery = '';
 
+    // CHART RANGE FILTER & COMPARISON STATE
+    let chartFilterRangeMode = 'all'; // 'all', '7d', '14d', 'custom'
+    let customChartRangeStart = 1;
+    let customChartRangeEnd = 30;
+    let compareDayA = 1;
+    let compareDayB = 2;
+
     // DAILY REWARD & APP ACTIVE TIMER VARIABLES
     let totalRewardPoints = parseInt(localStorage.getItem('st_reward_points') || '100');
     let appActiveSecondsToday = 0;
@@ -3795,12 +3938,12 @@
         if (t === tabId) {
           if (content) content.classList.remove('hidden');
           if (navBtn) {
-            navBtn.className = "flex-1 py-1.5 px-2 rounded-xl text-white bg-gradient-to-r from-sky-500 to-blue-600 font-extrabold text-[11px] flex flex-col sm:flex-row items-center justify-center gap-1 shadow-sm transition-all active:scale-95 flex-shrink-0";
+            navBtn.className = "flex-1 py-2 px-2 rounded-2xl text-white bg-gradient-to-r from-sky-500 to-blue-600 font-extrabold text-[11px] flex flex-col sm:flex-row items-center justify-center gap-1 shadow-md shadow-sky-500/25 transition-all active:scale-95 flex-shrink-0";
           }
         } else {
           if (content) content.classList.add('hidden');
           if (navBtn) {
-            navBtn.className = "flex-1 py-1.5 px-2 rounded-xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0";
+            navBtn.className = "flex-1 py-2 px-2 rounded-2xl text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] text-[11px] font-bold flex flex-col sm:flex-row items-center justify-center gap-1 transition-all active:scale-95 flex-shrink-0";
           }
         }
       });
@@ -3809,6 +3952,8 @@
         populateSpacedHubSubjectFilter();
         renderSpacedHubTable();
       } else if (tabId === 'analytics') {
+        populateDayComparisonSelectors();
+        runDayComparisonAnalysis();
         setTimeout(() => refreshMetricsAndCharts(), 50);
       } else if (tabId === 'mocks') {
         setTimeout(() => renderMocksSection(), 50);
@@ -6255,10 +6400,28 @@
     }
 
     function updateChartsData(totalDays, totalItems, itemScores) {
+      // Determine effective start and end day based on chartFilterRangeMode
+      let startDay = 1;
+      let endDay = totalDays;
+
+      const isCurrentMonth = new Date().getFullYear() === currentYear && new Date().getMonth() === currentMonth;
+      const todayDay = isCurrentMonth ? new Date().getDate() : totalDays;
+
+      if (chartFilterRangeMode === '7d') {
+        startDay = Math.max(1, todayDay - 6);
+        endDay = todayDay;
+      } else if (chartFilterRangeMode === '14d') {
+        startDay = Math.max(1, todayDay - 13);
+        endDay = todayDay;
+      } else if (chartFilterRangeMode === 'custom') {
+        startDay = Math.max(1, Math.min(totalDays, customChartRangeStart));
+        endDay = Math.max(startDay, Math.min(totalDays, customChartRangeEnd));
+      }
+
       if (chartTrend) {
         const trendLabels = [];
         const trendData = [];
-        for (let d = 1; d <= totalDays; d++) {
+        for (let d = startDay; d <= endDay; d++) {
           trendLabels.push(`D${d}`);
           let dayCount = 0;
           if (appState.items) {
@@ -6274,7 +6437,24 @@
       }
 
       if (chartDoughnut) {
-        if (itemScores.length > 0) {
+        // Calculate item hours within the filtered day range
+        const filteredItemHours = (appState.items || []).map(it => {
+          let doneInFilter = 0;
+          const checks = appState.checks[it.id] || {};
+          for (let d = startDay; d <= endDay; d++) {
+            if (checks[d]) doneInFilter++;
+          }
+          return {
+            name: it.name,
+            hoursSpent: doneInFilter * (it.hours || 2)
+          };
+        });
+
+        const hasAnyHours = filteredItemHours.some(x => x.hoursSpent > 0);
+        if (hasAnyHours) {
+          chartDoughnut.data.labels = filteredItemHours.map(it => it.name.substring(0, 10));
+          chartDoughnut.data.datasets[0].data = filteredItemHours.map(it => it.hoursSpent);
+        } else if (itemScores.length > 0) {
           chartDoughnut.data.labels = itemScores.map(it => it.name.substring(0, 10));
           chartDoughnut.data.datasets[0].data = itemScores.map(it => it.totalHoursSpent);
         } else {
@@ -6307,6 +6487,145 @@
           return total;
         });
         chartWeekly.update();
+      }
+    }
+
+    // ================= CHART DAY RANGE FILTER & COMPARISON LOGIC =================
+    function setChartDayRangeFilter(mode) {
+      chartFilterRangeMode = mode;
+      const customWrapper = document.getElementById('wrapperCustomChartRange');
+      if (customWrapper) {
+        if (mode === 'custom') customWrapper.classList.remove('hidden');
+        else customWrapper.classList.add('hidden');
+      }
+
+      ['all', '7d', '14d', 'custom'].forEach(m => {
+        const btn = document.getElementById(`btnFilterRange_${m}`);
+        if (!btn) return;
+        if (m === mode) {
+          btn.className = "px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 text-white flex-shrink-0 text-[11px] font-extrabold shadow-md shadow-sky-500/25 border border-sky-400/30 active:scale-95 transition-all";
+        } else {
+          btn.className = "px-3.5 py-1.5 rounded-2xl st-glass text-[var(--st-text-muted)] hover:text-[var(--st-text-head)] flex-shrink-0 text-[11px] font-bold border border-[var(--st-border)] active:scale-95 transition-all";
+        }
+      });
+
+      playHapticPop(500, 'sine', 0.04);
+      refreshMetricsAndCharts();
+      showInAppToast(`Chart filter: ${mode.toUpperCase()}`, '📊');
+    }
+
+    function toggleCustomRangeControls() {
+      const customWrapper = document.getElementById('wrapperCustomChartRange');
+      if (!customWrapper) return;
+      if (customWrapper.classList.contains('hidden')) {
+        setChartDayRangeFilter('custom');
+      } else {
+        setChartDayRangeFilter('all');
+      }
+    }
+
+    function applyCustomChartRange() {
+      const startEl = document.getElementById('inputChartRangeStart');
+      const endEl = document.getElementById('inputChartRangeEnd');
+      const totalDays = getTotalPlanDays();
+
+      const start = parseInt(startEl?.value) || 1;
+      const end = parseInt(endEl?.value) || totalDays;
+
+      customChartRangeStart = Math.max(1, Math.min(totalDays, start));
+      customChartRangeEnd = Math.max(customChartRangeStart, Math.min(totalDays, end));
+
+      safeText('lblCustomRangeDisplay', `Day ${customChartRangeStart} to Day ${customChartRangeEnd}`);
+      refreshMetricsAndCharts();
+    }
+
+    function populateDayComparisonSelectors() {
+      const selA = document.getElementById('selectCompareDayA');
+      const selB = document.getElementById('selectCompareDayB');
+      if (!selA || !selB) return;
+
+      const totalDays = getTotalPlanDays();
+      const isCur = new Date().getFullYear() === currentYear && new Date().getMonth() === currentMonth;
+      const realToday = isCur ? new Date().getDate() : 1;
+
+      let optionsHtml = '';
+      for (let d = 1; d <= totalDays; d++) {
+        const isToday = d === realToday;
+        optionsHtml += `<option value="${d}">${d === realToday ? `Day ${d} (Today)` : `Day ${d}`}</option>`;
+      }
+
+      selA.innerHTML = optionsHtml;
+      selB.innerHTML = optionsHtml;
+
+      const prevDay = Math.max(1, realToday - 1);
+      selA.value = prevDay;
+      selB.value = realToday;
+      compareDayA = prevDay;
+      compareDayB = realToday;
+    }
+
+    function runDayComparisonAnalysis() {
+      const selA = document.getElementById('selectCompareDayA');
+      const selB = document.getElementById('selectCompareDayB');
+      if (!selA || !selB) return;
+
+      const dayA = parseInt(selA.value) || 1;
+      const dayB = parseInt(selB.value) || 2;
+      compareDayA = dayA;
+      compareDayB = dayB;
+
+      let hoursA = 0;
+      let topicsA = 0;
+      let hoursB = 0;
+      let topicsB = 0;
+
+      if (appState.items) {
+        appState.items.forEach(it => {
+          const checks = appState.checks[it.id] || {};
+          if (checks[dayA]) {
+            topicsA++;
+            hoursA += (it.hours || 1);
+          }
+          if (checks[dayB]) {
+            topicsB++;
+            hoursB += (it.hours || 1);
+          }
+        });
+      }
+
+      safeText('lblCompareDayATitle', `Day ${dayA}`);
+      safeText('lblCompareDayAVal', `${hoursA.toFixed(1)}h (${topicsA} Topics)`);
+      safeText('lblCompareDayBTitle', `Day ${dayB}`);
+      safeText('lblCompareDayBVal', `${hoursB.toFixed(1)}h (${topicsB} Topics)`);
+
+      const deltaBadge = document.getElementById('lblCompareDeltaBadge');
+      const deltaNote = document.getElementById('lblCompareDeltaNote');
+
+      if (deltaBadge && deltaNote) {
+        if (hoursA === 0 && hoursB === 0) {
+          deltaBadge.textContent = '0%';
+          deltaBadge.className = 'text-xs font-black block text-[var(--st-text-muted)]';
+          deltaNote.textContent = 'Both days equal';
+        } else if (hoursA === 0 && hoursB > 0) {
+          deltaBadge.textContent = '+100% ▲';
+          deltaBadge.className = 'text-xs font-black block text-emerald-500';
+          deltaNote.textContent = `Day ${dayB} outperformed Day ${dayA}`;
+        } else {
+          const diffPct = Math.round(((hoursB - hoursA) / hoursA) * 100);
+          if (diffPct > 0) {
+            deltaBadge.textContent = `+${diffPct}% ▲`;
+            deltaBadge.className = 'text-xs font-black block text-emerald-500';
+            deltaNote.textContent = `Day ${dayB} ahead by +${(hoursB - hoursA).toFixed(1)}h`;
+          } else if (diffPct < 0) {
+            deltaBadge.textContent = `${diffPct}% ▼`;
+            deltaBadge.className = 'text-xs font-black block text-rose-500';
+            deltaNote.textContent = `Day ${dayB} lagged by ${(hoursB - hoursA).toFixed(1)}h`;
+          } else {
+            deltaBadge.textContent = '0% =';
+            deltaBadge.className = 'text-xs font-black block text-sky-500';
+            deltaNote.textContent = 'Equal performance';
+          }
+        }
       }
     }
 
