@@ -3423,6 +3423,11 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       try {
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         loadSavedPrefs();
         applyAppTheme();
         startLiveDeviceClock();
@@ -3465,6 +3470,7 @@
 
         updateExamDisplayInfo();
         startExamCountdown();
+        window.scrollTo(0, 0);
       } catch (err) {
         console.error('Boot error caught safely:', err);
       }
@@ -3516,11 +3522,14 @@
       }
       container.innerHTML = html;
 
-      // Automatically center-scroll to the live today tile smoothly
+      // Horizontally scroll the day carousel only, without moving the page vertically
       setTimeout(() => {
         const activeTile = container.querySelector('.ring-sky-300');
         if (activeTile) {
-          activeTile.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          const containerLeft = container.getBoundingClientRect().left;
+          const tileLeft = activeTile.getBoundingClientRect().left;
+          const offset = tileLeft - containerLeft - (container.clientWidth / 2) + (activeTile.clientWidth / 2);
+          container.scrollBy({ left: offset, behavior: 'smooth' });
         }
       }, 100);
     }
